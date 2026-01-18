@@ -1,0 +1,21 @@
+RewriteEngine On
+
+# URL r_bon/uuid diarahkan ke index.php
+RewriteRule ^r_bon/([a-zA-Z0-9-]+)$ r_bon/index.php?uuid=$1 [L,QSA]
+
+# Kalau cuma /r_bon/ tanpa uuid
+RewriteRule ^r_bon/?$ r_bon/index.php [L]
+
+RewriteEngine On
+
+# Hide .php extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+# Rewrite clean URL untuk pesan
+RewriteRule ^pesan/([a-f0-9\-]+)/?$ pesan/menu2.php?uuid=$1 [L,QSA]
+
+# Redirect dari URL lama ke URL baru
+RewriteCond %{THE_REQUEST} /pesan/menu2\.php\?uuid=([^\s&]+) [NC]
+RewriteRule ^ /pesan/%1/? [R=301,L]

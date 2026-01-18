@@ -1,0 +1,4 @@
+RewriteEngine On
+
+# URL: /pesan/UUID -> menu2.php?uuid=UUID
+RewriteRule ^([0-9a-fA-F-]{36})$ menu2.php?uuid=$1 [L,QSA]

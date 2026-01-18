@@ -1,0 +1,41 @@
+# Configuration files
+config.php
+
+# Database files
+*.sql
+daftartransaksi.sql
+db.sql
+
+# Image folder
+img/
+
+# Vendor folder (dependencies should be installed via composer)
+vendor/
+
+# Composer lock file (optional, uncomment if you want to ignore it)
+# composer.lock
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Backup files
+*.bak
+*.backup
+
+# Payment/sensitive data
+payload.txt
